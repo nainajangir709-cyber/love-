@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#cfe8f7">
+<meta name="description" content="A personal Boyfriend's Day scrapbook for Aman.">
+<title>Happy Boyfriend's Day, Aman ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Playpen+Sans:wght@400;600&display=swap');
+
+:root{
+  --blue:#cfe8f7; --blue2:#eaf7fd; --pink:#f5a6c8; --pink2:#ffd8e8;
+  --yellow:#f8d95c; --navy:#25354a; --ink:#293442; --white:#fffdfd;
+  --paper:#fffafc; --line:#d7e6ef; --shadow:0 16px 40px rgba(55,78,98,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"DM Sans",sans-serif;background:
+  radial-gradient(circle at 10% 20%,rgba(245,166,200,.18),transparent 22rem),
+  radial-gradient(circle at 90% 60%,rgba(207,232,247,.5),transparent 24rem),
+  repeating-linear-gradient(90deg,#fff 0 22px,#e9f6fc 22px 44px);
+  overflow-x:hidden}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.hand{font-family:"Patrick Hand","Playpen Sans",cursive}
+.stripes{background:repeating-linear-gradient(90deg,#fff 0 24px,var(--blue2) 24px 48px)}
+.site-shell{position:relative;min-height:100vh}
+.loading{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:repeating-linear-gradient(90deg,#fff 0 26px,var(--blue2) 26px 52px);transition:opacity .6s,visibility .6s}
+.loading.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loading-card{text-align:center;padding:35px 28px}
+.bunny{font-size:74px;line-height:1;filter:drop-shadow(0 6px 4px rgba(0,0,0,.06))}
+.loading h1{font-size:clamp(30px,6vw,52px);margin:12px 0 4px;color:#d95b92}
+.loading p{margin:0 0 18px;color:#587086}
+.loadbar{width:min(260px,70vw);height:10px;background:#fff;border:2px solid #e9b4cc;border-radius:99px;overflow:hidden;margin:auto}
+.loadbar i{display:block;width:0;height:100%;background:var(--pink);animation:load 1.4s ease forwards}
+@keyframes load{to{width:100%}}
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;color:#e8c62d;font-size:25px;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px) rotate(8deg)}}
+.topbar{position:fixed;right:18px;top:16px;z-index:1000;display:flex;gap:8px}
+.pill-btn{border:2px solid var(--navy);background:#fff;border-radius:999px;padding:9px 14px;font-weight:700;box-shadow:4px 5px 0 var(--navy);transition:.18s}
+.pill-btn:hover{transform:translate(2px,2px);box-shadow:2px 3px 0 var(--navy)}
+.hero{min-height:100vh;display:grid;place-items:center;padding:90px 18px 60px;position:relative}
+.browser{width:min(950px,94vw);background:#fff;border:4px solid #283646;border-radius:24px;box-shadow:14px 18px 0 rgba(37,53,74,.16),var(--shadow);overflow:hidden;position:relative}
+.browser.small{width:min(650px,92vw)}
+.browser-head{height:48px;background:#eef3f6;border-bottom:3px solid #283646;display:flex;align-items:center;gap:8px;padding:0 14px}
+.dot{width:12px;height:12px;border-radius:50%;background:#f2a7c7;border:1.5px solid #283646}
+.dot:nth-child(2){background:#f7d95c}.dot:nth-child(3){background:#a7d8ef}
+.address{margin-left:10px;flex:1;background:#fff;border:1.5px solid #aebcc6;border-radius:999px;padding:6px 12px;font-size:12px;color:#758596}
+.browser-body{padding:clamp(28px,5vw,64px);background:repeating-linear-gradient(90deg,#fff 0 28px,#e9f6fc 28px 56px);min-height:470px;position:relative}
+.hero-title{font-size:clamp(52px,9vw,105px);line-height:.9;color:#d85b91;margin:0 0 18px;max-width:820px;transform:rotate(-1.5deg)}
+.hero-sub{font-size:clamp(18px,2.5vw,28px);max-width:600px;color:#466078}
+.note{display:inline-block;background:#fff;padding:8px 14px;transform:rotate(2deg);box-shadow:4px 5px 0 #c9dbe5;margin:16px 0 26px}
+.big-btn{display:inline-flex;align-items:center;gap:8px;border:3px solid var(--navy);background:var(--pink);color:var(--navy);font-weight:800;padding:14px 22px;border-radius:16px;box-shadow:6px 7px 0 var(--navy);transition:.18s}
+.big-btn:hover{transform:translate(3px,3px);box-shadow:3px 4px 0 var(--navy)}
+.section{padding:90px 18px;position:relative}
+.section-inner{width:min(1120px,94vw);margin:auto}
+.section-title{font-size:clamp(42px,7vw,76px);color:#d45e92;margin:0 0 12px;line-height:.95}
+.section-intro{max-width:700px;color:#60758a;margin:0 0 38px;font-size:17px}
+.sticker{display:inline-block;padding:8px 13px;background:#fff;border:2px solid var(--navy);box-shadow:4px 4px 0 var(--navy);border-radius:12px;font-weight:800;transform:rotate(-2deg);margin-bottom:20px}
+.browser-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
+.window-card{grid-column:span 5;transform:rotate(-1.4deg)}
+.window-card:nth-child(2){grid-column:span 7;transform:rotate(1.2deg);margin-top:42px}
+.window-card:nth-child(3){grid-column:span 7;transform:rotate(-.8deg);margin-top:-10px}
+.window-card:nth-child(4){grid-column:span 5;transform:rotate(1.8deg);margin-top:25px}
+.photo-slot{aspect-ratio:4/3;background:#f8fcfe;display:grid;place-items:center;overflow:hidden;position:relative}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.placeholder{display:grid;place-items:center;text-align:center;gap:8px;padding:30px;color:#70879a}
+.placeholder span{font-size:42px}
+.caption{padding:12px 15px;background:#fff;font-family:"Patrick Hand",cursive;font-size:22px;color:#d45e92}
+.polaroids{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:25px}
+.polaroid{background:#fff;padding:12px 12px 18px;box-shadow:var(--shadow);border:1px solid #e8e8e8;transition:.22s;cursor:pointer}
+.polaroid:hover{transform:translateY(-8px) rotate(0deg)!important}
+.polaroid:nth-child(3n){transform:rotate(2deg)}.polaroid:nth-child(3n+1){transform:rotate(-2deg)}.polaroid:nth-child(3n+2){transform:rotate(.7deg)}
+.polaroid .pic{aspect-ratio:1/1;background:#edf7fc;overflow:hidden;display:grid;place-items:center}
+.polaroid .pic img{width:100%;height:100%;object-fit:cover}
+.polaroid .cap{font-family:"Patrick Hand";font-size:22px;color:#c95188;padding:10px 4px 0}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reason{min-height:190px;perspective:1000px}
+.reason-inner{height:100%;min-height:190px;position:relative;transform-style:preserve-3d;transition:transform .65s}
+.reason.open .reason-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border:3px solid var(--navy);border-radius:20px;padding:22px;background:#fff;box-shadow:7px 8px 0 var(--navy)}
+.face.back{transform:rotateY(180deg);background:var(--pink2);display:flex;align-items:center;justify-content:center;text-align:center}
+.face h3{font-family:"Patrick Hand";font-size:34px;color:#d45e92;margin:0 0 10px}
+.timeline{position:relative;margin:30px auto;max-width:900px}
+.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#f1b1cc;transform:translateX(-50%)}
+.t-item{width:50%;padding:0 35px 35px;position:relative}
+.t-item:nth-child(even){margin-left:50%}
+.t-dot{position:absolute;top:12px;width:20px;height:20px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy);right:-10px}
+.t-item:nth-child(even) .t-dot{left:-10px}
+.t-card{background:#fff;padding:20px;border:2px solid #cbdde8;border-radius:18px;box-shadow:8px 9px 0 #dcebf3}
+.t-date{font-weight:800;color:#d45e92}.t-card h3{margin:5px 0 7px;font-family:"Patrick Hand";font-size:29px}
+.envelopes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.envelope{background:#fff;border:3px solid var(--navy);border-radius:18px;padding:28px 18px;min-height:180px;box-shadow:7px 8px 0 var(--navy);position:relative;overflow:hidden;transition:.2s}
+.envelope:hover{transform:translateY(-5px) rotate(-1deg)}
+.env-flap{position:absolute;left:10%;right:10%;top:15px;height:65px;background:var(--pink2);clip-path:polygon(0 0,100% 0,50% 100%);border:2px solid #e59abb}
+.envelope h3{position:relative;margin:72px 0 0;font-family:"Patrick Hand";font-size:28px;color:#d45e92;text-align:center}
+.music{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;background:#fff;padding:25px;border:3px solid var(--navy);border-radius:24px;box-shadow:9px 10px 0 var(--navy);max-width:800px}
+.album{aspect-ratio:1;border-radius:18px;background:repeating-linear-gradient(45deg,#dff2fa 0 12px,#fff 12px 24px);display:grid;place-items:center;font-size:55px;border:2px solid #c9dce7}
+.music h3{font-family:"Patrick Hand";font-size:35px;color:#d45e92;margin:0}.music p{margin:4px 0 18px;color:#6c7f90}
+.controls{display:flex;align-items:center;gap:10px}.icon-btn{border:2px solid var(--navy);background:#fff;border-radius:50%;width:42px;height:42px;font-weight:800}.progress{height:8px;background:#e5eef3;border-radius:99px;flex:1;overflow:hidden}.progress i{display:block;width:0;height:100%;background:var(--pink)}
+.memory-box{background:#fff;border:3px solid var(--navy);border-radius:22px;padding:35px;box-shadow:9px 10px 0 var(--navy);max-width:850px;min-height:190px;display:flex;flex-direction:column;justify-content:center}
+.memory-text{font-family:"Patrick Hand";font-size:40px;color:#d45e92;min-height:65px}
+.letter{max-width:850px;margin:auto;background:#fffdf8;padding:clamp(28px,6vw,65px);border:1px solid #eadfca;box-shadow:var(--shadow);position:relative;background-image:linear-gradient(#f4ecdc 1px,transparent 1px);background-size:100% 34px}
+.letter:before{content:"";position:absolute;left:18px;right:18px;top:14px;height:12px;background:rgba(245,166,200,.45);transform:rotate(-1deg)}
+.letter-text{white-space:pre-wrap;font-family:"Patrick Hand";font-size:27px;line-height:1.35;color:#4a5661;margin-top:25px}
+.final{text-align:center;padding-bottom:110px}
+.final h2{font-family:"Patrick Hand";font-size:clamp(52px,9vw,100px);color:#d45e92;line-height:.9;margin:0}
+.footer-note{margin-top:20px;color:#6c7f90}
+
+.lightbox{position:fixed;inset:0;background:rgba(24,35,49,.72);z-index:3000;display:none;place-items:center;padding:25px}
+.lightbox.show{display:grid}
+.lightbox-card{width:min(900px,95vw);max-height:92vh;background:#fff;border-radius:20px;overflow:hidden;position:relative;border:3px solid var(--navy);box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.lightbox-img{width:100%;max-height:72vh;object-fit:contain;background:#eef7fb;display:block}
+.lb-caption{padding:15px 60px 18px;text-align:center;font-family:"Patrick Hand";font-size:27px;color:#d45e92}
+.lb-close,.lb-prev,.lb-next{position:absolute;z-index:2;border:2px solid var(--navy);background:#fff;border-radius:50%;width:42px;height:42px;font-weight:900}
+.lb-close{right:12px;top:12px}.lb-prev{left:12px;top:50%;transform:translateY(-50%)}.lb-next{right:12px;top:50%;transform:translateY(-50%)}
+
+.modal{position:fixed;inset:0;background:rgba(24,35,49,.58);z-index:4000;display:none;place-items:center;padding:18px}
+.modal.show{display:grid}
+.modal-card{width:min(760px,96vw);max-height:92vh;overflow:auto;background:#fff;border:3px solid var(--navy);border-radius:24px;box-shadow:12px 14px 0 rgba(37,53,74,.45);padding:25px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:-25px;background:#fff;padding:5px 0 15px;z-index:2}
+.modal-head h2{font-family:"Patrick Hand";color:#d45e92;font-size:42px;margin:0}.close-x{border:2px solid var(--navy);background:#fff;border-radius:50%;width:38px;height:38px;font-weight:900}
+.editor-nav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.tab{border:2px solid #aec2cf;background:#eef8fc;border-radius:999px;padding:8px 11px;font-weight:700}.tab.active{background:var(--pink);border-color:var(--navy)}
+.tabpane{display:none}.tabpane.active{display:block}
+.field{margin:13px 0}.field label{display:block;font-weight:800;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:2px solid #c9dbe5;border-radius:12px;padding:10px 12px;background:#fbfdfe;color:var(--ink)}.field textarea{min-height:90px;resize:vertical}
+.editor-photo{display:grid;grid-template-columns:100px 1fr auto;gap:12px;align-items:center;border:2px dashed #c6dce8;border-radius:14px;padding:10px;margin:10px 0;background:#fbfeff}.editor-photo img{width:100px;height:75px;object-fit:cover;border-radius:9px;background:#edf7fc}.editor-photo .ph{width:100px;height:75px;display:grid;place-items:center;background:#edf7fc;border-radius:9px;font-size:28px}.editor-actions{display:flex;gap:6px;flex-wrap:wrap}.mini{border:2px solid var(--navy);background:#fff;border-radius:9px;padding:6px 9px;font-weight:700}.danger{background:#ffe8ef}.savebar{position:sticky;bottom:-25px;background:#fff;padding:15px 0 0;border-top:1px solid #e4edf2;display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.hint{background:#eef8fc;border-left:5px solid var(--pink);padding:12px;border-radius:8px;color:#53697c;font-size:14px}
+.notice{padding:12px;border-radius:12px;background:#fff6c9;border:2px solid #e2c85a;font-size:14px}
+.toast{position:fixed;right:18px;bottom:18px;z-index:6000;background:#25354a;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.2);opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:none}
+.particle{position:fixed;pointer-events:none;z-index:5000;font-size:20px;animation:pop 900ms ease forwards}@keyframes pop{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.3)}}
+@media(max-width:800px){
+ .reason-grid{grid-template-columns:1fr 1fr}.envelopes{grid-template-columns:1fr 1fr}
+ .browser-grid{display:block}.window-card{margin:20px 0!important}
+ .timeline:before{left:10px}.t-item,.t-item:nth-child(even){width:100%;margin-left:0;padding-left:40px;padding-right:0}.t-dot,.t-item:nth-child(even) .t-dot{left:0;right:auto}
+ .music{grid-template-columns:1fr}.album{width:150px}
+}
+@media(max-width:560px){
+ .topbar{right:10px;top:10px}.pill-btn{padding:7px 10px;font-size:12px}
+ .hero{padding-top:70px}.browser-body{padding:28px 20px;min-height:420px}.hero-title{font-size:58px}
+ .section{padding:65px 14px}.reason-grid,.envelopes{grid-template-columns:1fr}
+ .polaroids{grid-template-columns:1fr 1fr}.polaroid{padding:8px 8px 13px}.polaroid .cap{font-size:18px}
+ .editor-photo{grid-template-columns:75px 1fr}.editor-photo img,.editor-photo .ph{width:75px;height:62px}.editor-actions{grid-column:1/-1}
+ .lightbox-card{width:100%}.lb-caption{font-size:23px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div class="loading" id="loading">
+  <div class="loading-card">
+    <div class="bunny">🐰</div>
+    <h1 class="hand">loading something made<br>just for Aman...</h1>
+    <p>a tiny corner of the internet ♡</p>
+    <div class="loadbar"><i></i></div>
+  </div>
+</div>
+
+<div class="topbar">
+  <button class="pill-btn" id="customizeBtn">♡ customize</button>
+</div>
+
+<main id="top" class="site-shell">
+  <section class="hero">
+    <div class="stars">
+      <span class="star" style="left:7%;top:18%">★</span><span class="star" style="left:84%;top:12%;animation-delay:1s">★</span>
+      <span class="star" style="left:91%;top:58%;animation-delay:2s">★</span><span class="star" style="left:12%;top:72%;animation-delay:.5s">★</span>
+    </div>
+    <div class="browser">
+      <div class="browser-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><div class="address">aman://my-favourite-person</div></div>
+      <div class="browser-body">
+        <div class="sticker">BOYFRIEND'S DAY • 2026</div>
+        <h1 class="hero-title hand" id="heroTitle">Happy Boyfriend's Day, Aman ♡</h1>
+        <p class="hero-sub" id="heroSubtitle">made with a little too much love</p>
+        <div class="note hand" id="heroNote">yes, I actually made you a whole website.</div><br>
+        <button class="big-btn" id="openBtn">open this ♡</button>
+        <div style="position:absolute;right:8%;bottom:8%;font-size:82px;opacity:.8">🐰</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stripes" id="photos">
+    <div class="section-inner">
+      <div class="sticker">01 / OUR INTERNET CORNER</div>
+      <h2 class="section-title hand">our little corner<br>of the internet ♡</h2>
+      <p class="section-intro">A tiny collection of moments that deserve their own little browser windows.</p>
+      <div class="browser-grid" id="browserGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="section-inner">
+      <div class="sticker">02 / LITTLE PIECES OF US</div>
+      <h2 class="section-title hand">little pieces of us</h2>
+      <p class="section-intro">Click any photo to open it properly. Replace the placeholders with your own memories using <b>♡ customize</b>.</p>
+      <div class="polaroids" id="polaroids"></div>
+    </div>
+  </section>
+
+  <section class="section stripes" id="reasons">
+    <div class="section-inner">
+      <div class="sticker">03 / THE IMPORTANT STUFF</div>
+      <h2 class="section-title hand">a few things<br>I love about you ♡</h2>
+      <p class="section-intro">Click a card. The back has the part that actually matters.</p>
+      <div class="reason-grid" id="reasonGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="timeline">
+    <div class="section-inner">
+      <div class="sticker">04 / OUR LITTLE TIMELINE</div>
+      <h2 class="section-title hand">our little timeline</h2>
+      <p class="section-intro">Your story, in your words. The dates below are editable placeholders until you add the real ones.</p>
+      <div class="timeline" id="timelineEl"></div>
+    </div>
+  </section>
+
+  <section class="section stripes" id="openwhen">
+    <div class="section-inner">
+      <div class="sticker">05 / OPEN WHEN</div>
+      <h2 class="section-title hand">open when...</h2>
+      <p class="section-intro">Little envelopes for the days when a normal message just isn't enough.</p>
+      <div class="envelopes" id="envelopes"></div>
+    </div>
+  </section>
+
+  <section class="section" id="music">
+    <div class="section-inner">
+      <div class="sticker">06 / OUR SOUNDTRACK</div>
+      <h2 class="section-title hand">our little soundtrack ♡</h2>
+      <p class="section-intro">No autoplay. Press play when you want it.</p>
+      <div class="music" id="musicCard"></div>
+    </div>
+  </section>
+
+  <section class="section stripes" id="memory">
+    <div class="section-inner">
+      <div class="sticker">07 / RANDOM MEMORY</div>
+      <h2 class="section-title hand">remember this?</h2>
+      <div class="memory-box">
+        <div class="memory-text" id="memoryText">click the button and let the internet choose a memory ♡</div>
+        <div><button class="big-btn" id="randomBtn">give me a random memory ♡</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="letter">
+    <div class="section-inner">
+      <div class="sticker">08 / ONE LAST THING</div>
+      <h2 class="section-title hand">okay, one last thing...</h2>
+      <div class="letter">
+        <div class="letter-text" id="finalLetter">Dear Aman,
+
+[WRITE YOUR LETTER HERE]
+
+Love,
+[YOUR NAME] ♡</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final stripes">
+    <div class="section-inner">
+      <div style="font-size:70px">🐰 ✦ ♡ ✦ 🐰</div>
+      <h2 class="hand" id="finalTitle">Happy Boyfriend's Day, Aman ♡</h2>
+      <p class="footer-note" id="finalNote">thank you for being my favourite person.</p><br>
+      <button class="big-btn" id="startOver">start over ↻</button>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-card">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img class="lightbox-img" id="lbImg" alt="">
+    <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<div class="modal" id="letterModal">
+  <div class="modal-card">
+    <div class="modal-head"><h2 class="hand" id="modalTitle">open when...</h2><button class="close-x" data-close-modal>×</button></div>
+    <div class="letter-text" id="modalMessage"></div>
+  </div>
+</div>
+
+<div class="modal" id="editorModal">
+  <div class="modal-card">
+    <div class="modal-head"><h2 class="hand">♡ customize your little website</h2><button class="close-x" data-close-editor>×</button></div>
+    <div class="hint">Your edits and uploaded photos are saved in this browser using IndexedDB. Use <b>Export My Website</b> when you want a deployable copy containing your current photos and text.</div>
+    <div class="editor-nav">
+      <button class="tab active" data-tab="content">CONTENT</button>
+      <button class="tab" data-tab="photosEdit">PHOTOS</button>
+      <button class="tab" data-tab="reasonsEdit">REASONS</button>
+      <button class="tab" data-tab="timelineEdit">TIMELINE</button>
+      <button class="tab" data-tab="lettersEdit">LETTERS</button>
+      <button class="tab" data-tab="musicEdit">MUSIC</button>
+      <button class="tab" data-tab="memoryEdit">MEMORIES</button>
+      <button class="tab" data-tab="settingsEdit">SETTINGS</button>
+    </div>
+
+    <div class="tabpane active" id="tab-content">
+      <div class="field"><label>Boyfriend name</label><input id="editBoyfriend"></div>
+      <div class="field"><label>My name</label><input id="editMyName"></div>
+      <div class="field"><label>Hero subtitle</label><input id="editSubtitle"></div>
+      <div class="field"><label>Hero note</label><input id="editHeroNote"></div>
+      <div class="field"><label>Final note</label><input id="editFinalNote"></div>
+    </div>
+
+    <div class="tabpane" id="tab-photosEdit">
+      <div class="hint">Upload JPG, JPEG, PNG or WEBP. Your images stay in this browser until you export the customized website.</div>
+      <div id="photoEditor"></div>
+    </div>
+
+    <div class="tabpane" id="tab-reasonsEdit"><div id="reasonEditor"></div></div>
+    <div class="tabpane" id="tab-timelineEdit"><div id="timelineEditor"></div></div>
+    <div class="tabpane" id="tab-lettersEdit"><div id="lettersEditor"></div></div>
+
+    <div class="tabpane" id="tab-musicEdit">
+      <div class="field"><label>Song title</label><input id="editSongTitle"></div>
+      <div class="field"><label>Artist</label><input id="editSongArtist"></div>
+      <div class="field"><label>Audio file (optional)</label><input type="file" id="audioUpload" accept=".mp3,.wav,.m4a,.ogg,audio/*"></div>
+      <div class="field"><label>Album art (optional)</label><input type="file" id="albumUpload" accept=".jpg,.jpeg,.png,.webp,image/*"></div>
+      <div class="notice">Music is never autoplayed. If you upload a song, it is stored locally and can be embedded into an exported single-file website.</div>
+    </div>
+
+    <div class="tabpane" id="tab-memoryEdit"><div id="memoryEditor"></div></div>
+
+    <div class="tabpane" id="tab-settingsEdit">
+      <div class="notice">Reset removes your browser-saved customizations and uploaded media. It does not delete the original website file.</div>
+      <button class="mini danger" id="resetBtn">Reset Customizations</button>
+    </div>
+
+    <div class="savebar">
+      <button class="big-btn" id="saveBtn">Save Changes ♡</button>
+      <button class="mini" id="exportBtn">Export My Website</button>
+      <button class="mini" data-close-editor>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DEFAULT_DATA = {
+  boyfriendName:"Aman",
+  yourName:"YOUR NAME",
+  subtitle:"made with a little too much love",
+  heroNote:"yes, I actually made you a whole website.",
+  finalNote:"thank you for being my favourite person.",
+  photos:Array.from({length:12},(_,i)=>({image:"",caption:["one of my favourites","this one >>>","look at us","us being us","still not over this","core memory","why are we like this","a tiny memory","favourite people","this day ♡","just us","another little moment"][i]})),
+  reasons:[
+    {title:"your smile",message:"[write what you love about his smile here]"},
+    {title:"the way you listen",message:"[write your own message here]"},
+    {title:"our stupid conversations",message:"[write your own message here]"},
+    {title:"the little things",message:"[write your own message here]"},
+    {title:"ordinary days",message:"[write your own message here]"},
+    {title:"just... you",message:"[write your own message here]"}
+  ],
+  timeline:[
+    {date:"[DATE]",title:"[MEMORY TITLE]",description:"[MEMORY DESCRIPTION]"},
+    {date:"[DATE]",title:"[MEMORY TITLE]",description:"[MEMORY DESCRIPTION]"},
+    {date:"[DATE]",title:"[MEMORY TITLE]",description:"[MEMORY DESCRIPTION]"},
+    {date:"[TODAY]",title:"today ♡",description:"[write what today means to you]"}
+  ],
+  openWhen:[
+    {title:"open when you miss me",message:"[write your letter here]"},
+    {title:"open when you need a smile",message:"[write your letter here]"},
+    {title:"open when you've had a bad day",message:"[write your letter here]"},
+    {title:"open when you want to know how much I love you",message:"[write your letter here]"}
+  ],
+  memories:["[memory 01]","[memory 02]","[memory 03]","[memory 04]","[memory 05]"],
+  song:{title:"Our song",artist:"Add the artist",audio:"",album:""},
+  finalLetter:"Dear Aman,\\n\\n[WRITE YOUR LETTER HERE]\\n\\nLove,\\n[YOUR NAME] ♡"
+};
+
+let data = structuredClone(DEFAULT_DATA);
+let media = {audio:"",album:""};
+let db;
+
+function clone(x){return JSON.parse(JSON.stringify(x))}
+function escapeHTML(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400)}
+function particleBurst(x,y){for(let i=0;i<12;i++){const p=document.createElement("span");p.className="particle";p.textContent=Math.random()>.5?"♡":"✦";p.style.left=x+"px";p.style.top=y+"px";p.style.setProperty("--dx",(Math.random()*180-90)+"px");p.style.setProperty("--dy",(Math.random()*-150-30)+"px");document.body.appendChild(p);setTimeout(()=>p.remove(),950)}}
+function openModal(id){document.getElementById(id).classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+
+function openDB(){
+  return new Promise((resolve,reject)=>{
+    const req=indexedDB.open("AmanBoyfriendDayDB",1);
+    req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains("store"))d.createObjectStore("store")}
+    req.onsuccess=()=>{db=req.result;resolve(db)}
+    req.onerror=()=>reject(req.error)
+  })
+}
+function idbGet(key){return new Promise((res,rej)=>{const r=db.transaction("store","readonly").objectStore("store").get(key);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function idbSet(key,val){return new Promise((res,rej)=>{const r=db.transaction("store","readwrite").objectStore("store").put(val,key);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+function idbDelete(key){return new Promise((res,rej)=>{const r=db.transaction("store","readwrite").objectStore("store").delete(key);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+
+async function loadSaved(){
+  try{
+    await openDB();
+    const saved=await idbGet("data"); if(saved) data=saved;
+    const savedAudio=await idbGet("audio"); if(savedAudio) media.audio=savedAudio;
+    const savedAlbum=await idbGet("album"); if(savedAlbum) media.album=savedAlbum;
+  }catch(e){console.warn("IndexedDB unavailable; using current-session data.",e)}
+}
+
+function activePhotos(){return data.photos.filter(p=>p.image)}
+function render(){
+  document.getElementById("heroTitle").textContent=`Happy Boyfriend's Day, ${data.boyfriendName} ♡`;
+  document.getElementById("heroSubtitle").textContent=data.subtitle;
+  document.getElementById("heroNote").textContent=data.heroNote;
+  document.getElementById("finalTitle").textContent=`Happy Boyfriend's Day, ${data.boyfriendName} ♡`;
+  document.getElementById("finalNote").textContent=data.finalNote;
+  renderBrowser();
+  renderGallery();
+  renderReasons();
+  renderTimeline();
+  renderOpenWhen();
+  renderMusic();
+  document.getElementById("finalLetter").textContent=data.finalLetter.replace("[YOUR NAME]",data.yourName);
+}
+function photoHTML(p,idx){
+  return p.image ? `<img src="${p.image}" alt="${escapeHTML(p.caption||"Memory")}" loading="lazy">` :
+    `<div class="placeholder"><span>♡</span><div>add a memory here ♡</div><button class="mini add-photo-direct" data-index="${idx}">+ Add Photo</button></div>`;
+}
+function renderBrowser(){
+  const el=document.getElementById("browserGrid"); el.innerHTML="";
+  [0,1,2,3].forEach(i=>{
+    const p=data.photos[i];
+    el.insertAdjacentHTML("beforeend",`<div class="browser window-card">
+      <div class="browser-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><div class="address">memory-${String(i+1).padStart(2,"0")}.jpg</div></div>
+      <div class="photo-slot">${photoHTML(p,i)}</div>
+      <div class="caption">${escapeHTML(p.caption||"a little memory")}</div>
+    </div>`);
+  });
+}
+function renderGallery(){
+  const el=document.getElementById("polaroids");el.innerHTML="";
+  data.photos.forEach((p,i)=>{
+    el.insertAdjacentHTML("beforeend",`<article class="polaroid" data-gallery-index="${i}">
+      <div class="pic">${p.image?`<img src="${p.image}" alt="${escapeHTML(p.caption||"Memory")}" loading="lazy">`:`<div class="placeholder"><span>♡</span><div>add a memory here ♡</div><button class="mini add-photo-direct" data-index="${i}">+ Add Photo</button></div>`}</div>
+      <div class="cap">${escapeHTML(p.caption||"a little memory")}</div>
+    </article>`);
+  });
+  el.querySelectorAll(".polaroid").forEach(card=>card.addEventListener("click",e=>{
+    if(e.target.closest(".add-photo-direct"))return;
+    const i=Number(card.dataset.galleryIndex); if(data.photos[i].image)openLightbox(i);
+  }));
+  el.querySelectorAll(".add-photo-direct").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();openEditor();setEditorTab("photosEdit");document.querySelector(`[data-upload-index="${b.dataset.index}"]`)?.click()}));
+  document.querySelectorAll(".add-photo-direct").forEach(b=>b.addEventListener("click",e=>e.stopPropagation()));
+}
+function renderReasons(){
+  document.getElementById("reasonGrid").innerHTML=data.reasons.map((r,i)=>`<div class="reason" data-reason="${i}"><div class="reason-inner">
+    <div class="face"><h3>${escapeHTML(r.title)}</h3><p>click to open ♡</p></div>
+    <div class="face back"><p>${escapeHTML(r.message)}</p></div>
+  </div></div>`).join("");
+  document.querySelectorAll(".reason").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("open")));
+}
+function renderTimeline(){
+  document.getElementById("timelineEl").innerHTML=data.timeline.map((t,i)=>`<div class="t-item"><span class="t-dot"></span><div class="t-card"><div class="t-date">${escapeHTML(t.date)}</div><h3>${escapeHTML(t.title)}</h3><div>${escapeHTML(t.description)}</div></div></div>`).join("");
+}
+function renderOpenWhen(){
+  document.getElementById("envelopes").innerHTML=data.openWhen.map((o,i)=>`<button class="envelope" data-open-when="${i}"><div class="env-flap"></div><h3>${escapeHTML(o.title)}</h3></button>`).join("");
+  document.querySelectorAll("[data-open-when]").forEach(b=>b.addEventListener("click",()=>{const o=data.openWhen[Number(b.dataset.openWhen)];document.getElementById("modalTitle").textContent=o.title;document.getElementById("modalMessage").textContent=o.message;openModal("letterModal")}));
+}
+function renderMusic(){
+  const el=document.getElementById("musicCard");
+  if(!media.audio){el.innerHTML=`<div class="album">♡</div><div><h3>${escapeHTML(data.song.title)}</h3><p>${escapeHTML(data.song.artist)}</p><div class="notice">add our song ♡ — open <b>customize → music</b> to upload it.</div></div>`;return}
+  el.innerHTML=`<div class="album">${media.album?`<img src="${media.album}" style="width:100%;height:100%;object-fit:cover;border-radius:16px" alt="">`:"🎵"}</div>
+  <div><h3>${escapeHTML(data.song.title)}</h3><p>${escapeHTML(data.song.artist)}</p>
+  <audio id="audio" preload="metadata" src="${media.audio}"></audio>
+  <div class="controls"><button class="icon-btn" id="play">▶</button><div class="progress"><i id="prog"></i></div><span id="time" style="font-size:12px">0:00</span></div></div>`;
+  const a=document.getElementById("audio"),play=document.getElementById("play"),prog=document.getElementById("prog"),time=document.getElementById("time");
+  play.onclick=()=>a.paused?(a.play(),play.textContent="Ⅱ"):(a.pause(),play.textContent="▶");
+  a.ontimeupdate=()=>{prog.style.width=(a.duration?a.currentTime/a.duration*100:0)+"%";time.textContent=fmt(a.currentTime)};
+  a.onended=()=>play.textContent="▶";
+}
+function fmt(s){if(!Number.isFinite(s))return"0:00";return Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0")}
+function openLightbox(i){lbIndex=i;updateLB();document.getElementById("lightbox").classList.add("show")}
+let lbIndex=0;
+function updateLB(){const p=data.photos[lbIndex];document.getElementById("lbImg").src=p.image;document.getElementById("lbImg").alt=p.caption||"Memory";document.getElementById("lbCaption").textContent=p.caption||""}
+function closeLB(){document.getElementById("lightbox").classList.remove("show")}
+function moveLB(dir){const arr=activePhotos();if(!arr.length)return;let originalIndex=activePhotos().indexOf(data.photos[lbIndex]);originalIndex=(originalIndex+dir+arr.length)%arr.length;lbIndex=data.photos.indexOf(arr[originalIndex]);updateLB()}
+
+function openEditor(){populateEditor();openModal("editorModal")}
+function setEditorTab(name){document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.tab===name));document.querySelectorAll(".tabpane").forEach(p=>p.classList.toggle("active",p.id==="tab-"+name))}
+function populateEditor(){
+  document.getElementById("editBoyfriend").value=data.boyfriendName;
+  document.getElementById("editMyName").value=data.yourName;
+  document.getElementById("editSubtitle").value=data.subtitle;
+  document.getElementById("editHeroNote").value=data.heroNote;
+  document.getElementById("editFinalNote").value=data.finalNote;
+  document.getElementById("editSongTitle").value=data.song.title;
+  document.getElementById("editSongArtist").value=data.song.artist;
+  renderPhotoEditor();renderReasonEditor();renderTimelineEditor();renderLettersEditor();renderMemoryEditor();
+}
+function renderPhotoEditor(){
+  document.getElementById("photoEditor").innerHTML=data.photos.map((p,i)=>`<div class="editor-photo">
+    ${p.image?`<img src="${p.image}" alt="">`:`<div class="ph">♡</div>`}
+    <div><b>PHOTO ${String(i+1).padStart(2,"0")}</b>
+      <div class="field" style="margin:7px 0 0"><input data-cap-index="${i}" value="${escapeHTML(p.caption)}" placeholder="Caption"></div>
+    </div>
+    <div class="editor-actions">
+      <input type="file" accept=".jpg,.jpeg,.png,.webp,image/*" data-upload-index="${i}" style="display:none">
+      <button class="mini" data-upload-btn="${i}">${p.image?"Replace":"Upload"}</button>
+      ${p.image?`<button class="mini danger" data-remove-photo="${i}">Remove</button>`:""}
+      ${i>0?`<button class="mini" data-up-photo="${i}">↑</button>`:""}
+      ${i<data.photos.length-1?`<button class="mini" data-down-photo="${i}">↓</button>`:""}
+    </div>
+  </div>`).join("");
+  document.querySelectorAll("[data-upload-btn]").forEach(b=>b.onclick=()=>document.querySelector(`[data-upload-index="${b.dataset.uploadBtn}"]`).click());
+  document.querySelectorAll("[data-upload-index]").forEach(inp=>inp.onchange=()=>handleImage(inp.files[0],Number(inp.dataset.uploadIndex)));
+  document.querySelectorAll("[data-remove-photo]").forEach(b=>b.onclick=()=>{data.photos[Number(b.dataset.removePhoto)].image="";renderPhotoEditor();render()});
+  document.querySelectorAll("[data-cap-index]").forEach(inp=>inp.oninput=()=>data.photos[Number(inp.dataset.capIndex)].caption=inp.value);
+  document.querySelectorAll("[data-up-photo]").forEach(b=>b.onclick=()=>swapPhoto(Number(b.dataset.upPhoto),Number(b.dataset.upPhoto)-1));
+  document.querySelectorAll("[data-down-photo]").forEach(b=>b.onclick=()=>swapPhoto(Number(b.dataset.downPhoto),Number(b.dataset.downPhoto)+1));
+}
+async function handleImage(file,i){
+  if(!file)return;
+  if(!/^image\/(jpeg|png|webp)$/.test(file.type)){toast("Please choose JPG, PNG or WEBP.");return}
+  data.photos[i].image=await fileToDataURL(file);
+  renderPhotoEditor();render();toast("Photo added ♡");
+}
+function swapPhoto(a,b){[data.photos[a],data.photos[b]]=[data.photos[b],data.photos[a]];renderPhotoEditor();render();}
+
+function renderReasonEditor(){
+  document.getElementById("reasonEditor").innerHTML=data.reasons.map((r,i)=>`<div class="field"><label>Card ${i+1} title</label><input data-rtitle="${i}" value="${escapeHTML(r.title)}"><label style="margin-top:7px">Message</label><textarea data-rmsg="${i}">${escapeHTML(r.message)}</textarea></div>`).join("");
+  document.querySelectorAll("[data-rtitle]").forEach(x=>x.oninput=()=>{data.reasons[+x.dataset.rtitle].title=x.value;renderReasons()});
+  document.querySelectorAll("[data-rmsg]").forEach(x=>x.oninput=()=>{data.reasons[+x.dataset.rmsg].message=x.value});
+}
+function renderTimelineEditor(){
+  document.getElementById("timelineEditor").innerHTML=data.timeline.map((t,i)=>`<div class="field" style="border:2px dashed #c6dce8;border-radius:12px;padding:12px"><b>Timeline item ${i+1}</b><label>Date</label><input data-tdate="${i}" value="${escapeHTML(t.date)}"><label>Title</label><input data-ttitle="${i}" value="${escapeHTML(t.title)}"><label>Description</label><textarea data-tdesc="${i}">${escapeHTML(t.description)}</textarea></div>`).join("");
+  document.querySelectorAll("[data-tdate]").forEach(x=>x.oninput=()=>{data.timeline[+x.dataset.tdate].date=x.value;renderTimeline()});
+  document.querySelectorAll("[data-ttitle]").forEach(x=>x.oninput=()=>{data.timeline[+x.dataset.ttitle].title=x.value;renderTimeline()});
+  document.querySelectorAll("[data-tdesc]").forEach(x=>x.oninput=()=>{data.timeline[+x.dataset.tdesc].description=x.value;renderTimeline()});
+}
+function renderLettersEditor(){
+  document.getElementById("lettersEditor").innerHTML=data.openWhen.map((o,i)=>`<div class="field"><label>Envelope ${i+1} title</label><input data-otitle="${i}" value="${escapeHTML(o.title)}"><label>Letter</label><textarea data-omsg="${i}">${escapeHTML(o.message)}</textarea></div>`).join("")+
+  `<div class="field"><label>Final letter</label><textarea id="editFinalLetter" style="min-height:230px">${escapeHTML(data.finalLetter)}</textarea></div>`;
+  document.querySelectorAll("[data-otitle]").forEach(x=>x.oninput=()=>{data.openWhen[+x.dataset.otitle].title=x.value;renderOpenWhen()});
+  document.querySelectorAll("[data-omsg]").forEach(x=>x.oninput=()=>{data.openWhen[+x.dataset.omsg].message=x.value});
+  document.getElementById("editFinalLetter").oninput=e=>{data.finalLetter=e.target.value;document.getElementById("finalLetter").textContent=data.finalLetter.replace("[YOUR NAME]",data.yourName)};
+}
+function renderMemoryEditor(){
+  document.getElementById("memoryEditor").innerHTML=data.memories.map((m,i)=>`<div class="field"><label>Memory ${i+1}</label><textarea data-memory="${i}">${escapeHTML(m)}</textarea></div>`).join("")+
+  `<button class="mini" id="addMemory">+ Add memory</button>`;
+  document.querySelectorAll("[data-memory]").forEach(x=>x.oninput=()=>data.memories[+x.dataset.memory]=x.value);
+  document.getElementById("addMemory").onclick=()=>{data.memories.push("[new memory]");renderMemoryEditor()};
+}
+function fileToDataURL(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}
+
+async function saveAll(){
+  data.boyfriendName=document.getElementById("editBoyfriend").value.trim()||"Aman";
+  data.yourName=document.getElementById("editMyName").value.trim()||"YOUR NAME";
+  data.subtitle=document.getElementById("editSubtitle").value;
+  data.heroNote=document.getElementById("editHeroNote").value;
+  data.finalNote=document.getElementById("editFinalNote").value;
+  data.song.title=document.getElementById("editSongTitle").value;
+  data.song.artist=document.getElementById("editSongArtist").value;
+  try{await idbSet("data",data);await idbSet("audio",media.audio);await idbSet("album",media.album)}catch(e){console.warn(e)}
+  render();toast("Saved ♡");
+}
+async function resetAll(){
+  if(!confirm("Reset all saved customizations and uploaded photos/music?"))return;
+  data=clone(DEFAULT_DATA);media={audio:"",album:""};
+  try{await idbDelete("data");await idbDelete("audio");await idbDelete("album")}catch(e){}
+  render();populateEditor();toast("Reset complete");
+}
+
+async function exportWebsite(){
+  const source="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+  const clean=source
+    .replace(/<div class="loading" id="loading">[\s\S]*?<\/div>\s*\n\s*<div class="topbar">/, '<div class="loading hidden" id="loading"></div>\n<div class="topbar">')
+    .replace(/let data = structuredClone\(DEFAULT_DATA\);/, "let data = "+JSON.stringify(data)+";")
+    .replace(/let media = \{audio:"",album:""\};/, "let media = "+JSON.stringify(media)+";");
+  const blob=new Blob([clean],{type:"text/html"});
+  const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="happy-boyfriends-day-aman.html";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  toast("Exported your customized website ♡");
+}
+
+document.getElementById("customizeBtn").onclick=openEditor;
+document.getElementById("openBtn").onclick=e=>{particleBurst(e.clientX,e.clientY);document.getElementById("photos").scrollIntoView({behavior:"smooth"})};
+document.getElementById("startOver").onclick=()=>document.getElementById("top").scrollIntoView({behavior:"smooth"});
+document.getElementById("randomBtn").onclick=e=>{
+  const valid=data.memories.filter(x=>x.trim()&& !x.startsWith("[memory"));
+  const pool=valid.length?valid:["add your first memory in customize ♡"];
+  document.getElementById("memoryText").textContent=pool[Math.floor(Math.random()*pool.length)];
+  particleBurst(e.clientX,e.clientY);
+};
+document.getElementById("lbClose").onclick=closeLB;document.getElementById("lbPrev").onclick=()=>moveLB(-1);document.getElementById("lbNext").onclick=()=>moveLB(1);
+document.getElementById("lightbox").onclick=e=>{if(e.target.id==="lightbox")closeLB()};
+document.querySelectorAll("[data-close-modal]").forEach(b=>b.onclick=()=>closeModal("letterModal"));
+document.querySelectorAll("[data-close-editor]").forEach(b=>b.onclick=()=>closeModal("editorModal"));
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>setEditorTab(b.dataset.tab));
+document.getElementById("saveBtn").onclick=saveAll;
+document.getElementById("resetBtn").onclick=resetAll;
+document.getElementById("exportBtn").onclick=exportWebsite;
+document.getElementById("audioUpload").onchange=async e=>{if(e.target.files[0]){media.audio=await fileToDataURL(e.target.files[0]);toast("Song added ♡");renderMusic()}};
+document.getElementById("albumUpload").onchange=async e=>{if(e.target.files[0]){media.album=await fileToDataURL(e.target.files[0]);toast("Album art added ♡");renderMusic()}};
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLB();closeModal("letterModal");closeModal("editorModal")}if(document.getElementById("lightbox").classList.contains("show")){if(e.key==="ArrowLeft")moveLB(-1);if(e.key==="ArrowRight")moveLB(1)}});
+
+(async()=>{
+  await loadSaved();render();
+  setTimeout(()=>document.getElementById("loading").classList.add("hidden"),1550);
+})();
+</script>
+</body>
+</html>
